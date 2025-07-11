@@ -3,7 +3,7 @@ from PIL import Image
 import numpy as np
 import torch
 
-class Picta_RecursiveImageLoader:
+class RecursiveImageLoader:
     CATEGORY = "Picta/IO"
     RETURN_TYPES = ("IMAGE", "STRING")
     RETURN_NAMES = ("Image", "Path")
@@ -57,3 +57,12 @@ class Picta_RecursiveImageLoader:
         path = self._path_list[self._index]
         self._index += 1
         return (img, path)
+
+
+NODE_CLASS_MAPPINGS = {
+    "Picta_RecursiveImageLoader": RecursiveImageLoader,
+}
+
+NODE_DISPLAY_NAME_MAPPINGS = {
+    "Picta_RecursiveImageLoader": "Recursive Image Loader",
+}

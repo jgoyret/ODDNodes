@@ -2,7 +2,7 @@ import os
 from PIL import Image
 import numpy as np
 
-class Picta_SaveImageWithStructure:
+class SaveImageWithStructure:
     CATEGORY = "Picta/IO"
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("status",)
@@ -46,3 +46,11 @@ class Picta_SaveImageWithStructure:
                 print(f"❌ Error al guardar {path}: {e}")
 
         return (f"Guardadas {count} imágenes.",)
+
+NODE_CLASS_MAPPINGS = {
+    "Picta_SaveImageWithStructure": SaveImageWithStructure,
+}
+
+NODE_DISPLAY_NAME_MAPPINGS = {
+    "Picta_SaveImageWithStructure": "Save Image With Structure",
+}
