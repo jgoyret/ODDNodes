@@ -14,14 +14,20 @@ class SaveImageWithStructure:
             "required": {
                 "image": ("IMAGE",),
                 "original_path": ("STRING",),
-                "output_base_folder": ("STRING", {"default": "./output_folder"}),
-                "input_base_folder": ("STRING", {"default": "./input_folder"}),
+                "output_base_folder": ("STRING", {
+                    "default": "./output_folder"
+                }),
+                "input_base_folder": ("STRING", {
+                    "default": "./input_folder"
+                }),
             }
         }
 
     OUTPUT_IS_LIST = (False, False, False, False)
 
     def save_images(self, image, original_path, output_base_folder, input_base_folder):
+        print("🔥 Nodo SaveImageWithStructure ejecutándose...")
+
         if not isinstance(image, list):
             image = [image]
         if not isinstance(original_path, list):
@@ -32,6 +38,8 @@ class SaveImageWithStructure:
 
         count = 0
         for img_tensor, path in zip(image, original_path):
+            print(f"Intentando guardar: {path}")  # <- debug por cada imagen
+
             try:
                 img_np = (img_tensor[0].clamp(0, 1).cpu().numpy() * 255).astype(np.uint8)
                 img = Image.fromarray(img_np)
@@ -41,6 +49,7 @@ class SaveImageWithStructure:
                 os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
                 img.save(output_path)
+                print(f"✅ Guardada: {output_path}")
                 count += 1
             except Exception as e:
                 print(f"❌ Error al guardar {path}: {e}")
