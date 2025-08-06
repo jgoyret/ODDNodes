@@ -10,5 +10,4 @@ NODE_CLASS_MAPPINGS = {
     "Picta_SaveImageWithStructure": SaveImageWithStructure,
     "Picta_RecursiveImageLoader": RecursiveImageLoader,
     "Picta_JPEGQualityReducer": JPEGQualityReducer,
-
 }
