@@ -4,7 +4,7 @@ import numpy as np
 import torch
 
 class RecursiveImageLoader:
-    CATEGORY = "Picta/IO"
+    CATEGORY = "ODDNodes/IO"
     RETURN_TYPES = ("IMAGE", "STRING",)
     RETURN_NAMES = ("Image List", "Path List")
     FUNCTION = "load_images"
@@ -39,9 +39,9 @@ class RecursiveImageLoader:
         return (image_list, path_list)
 
 NODE_CLASS_MAPPINGS = {
-    "Picta_RecursiveImageLoader": RecursiveImageLoader,
+    "ODD_RecursiveImageLoader": RecursiveImageLoader,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "Picta_RecursiveImageLoader": "Recursive Image Loader",
+    "ODD_RecursiveImageLoader": "Recursive Image Loader",
 }

@@ -1,13 +1,12 @@
-# PictaNodes __init__.py
-# Puedes dejarlo vacío si no necesitas lógica al importar
-from .tint_nodes import TintedImageByHexColor
-from .SaveImageWithStructure import SaveImageWithStructure
-from .RecursiveImageLoader import RecursiveImageLoader
-from .JPEGQualityReducer import JPEGQualityReducer
+from .nodes import NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS
 
-NODE_CLASS_MAPPINGS = {
-    "Picta_TintedImageByHexColor": TintedImageByHexColor,
-    "Picta_SaveImageWithStructure": SaveImageWithStructure,
-    "Picta_RecursiveImageLoader": RecursiveImageLoader,
-    "Picta_JPEGQualityReducer": JPEGQualityReducer,
-}
+WEB_DIRECTORY = "./web"
+
+try:
+    from .server_routes import register_routes
+    register_routes()
+except Exception:
+    import logging
+    logging.exception("ODDNodes: failed to register server routes")
+
+__all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS", "WEB_DIRECTORY"]

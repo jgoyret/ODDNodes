@@ -3,7 +3,7 @@ import numpy as np
 import torch
 
 class TintedImageByHexColor:
-    CATEGORY = "Picta/Color"
+    CATEGORY = "ODDNodes/Color"
     RETURN_TYPES = ("IMAGE",)
     RETURN_NAMES = ("Tinted Image",)
     FUNCTION = "apply_tint"
@@ -46,9 +46,9 @@ class TintedImageByHexColor:
 
 # Registrar el nodo
 NODE_CLASS_MAPPINGS = {
-    "Picta_TintedImageByHexColor": TintedImageByHexColor,
+    "ODD_TintedImageByHexColor": TintedImageByHexColor,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "Picta_TintedImageByHexColor": "Tinted Image By Hex Color",
+    "ODD_TintedImageByHexColor": "Tinted Image By Hex Color",
 }

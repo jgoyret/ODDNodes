@@ -3,7 +3,7 @@ from PIL import Image
 import numpy as np
 
 class SaveImageWithStructure:
-    CATEGORY = "Picta/IO"
+    CATEGORY = "ODDNodes/IO"
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("status",)
     FUNCTION = "save_images"
@@ -57,9 +57,9 @@ class SaveImageWithStructure:
         return (f"Guardadas {count} imágenes.",)
 
 NODE_CLASS_MAPPINGS = {
-    "Picta_SaveImageWithStructure": SaveImageWithStructure,
+    "ODD_SaveImageWithStructure": SaveImageWithStructure,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "Picta_SaveImageWithStructure": "Save Image With Structure",
+    "ODD_SaveImageWithStructure": "Save Image With Structure",
 }

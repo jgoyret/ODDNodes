@@ -4,7 +4,7 @@ import torch
 import numpy as np
 
 class JPEGQualityReducer:
-    CATEGORY = "Picta/Image"
+    CATEGORY = "ODDNodes/Image"
     RETURN_TYPES = ("IMAGE",)
     RETURN_NAMES = ("Compressed Image",)
     FUNCTION = "compress_image"
@@ -44,9 +44,9 @@ class JPEGQualityReducer:
         return (img_tensor,)
 
 NODE_CLASS_MAPPINGS = {
-    "Picta_JPEGQualityReducer": JPEGQualityReducer,
+    "ODD_JPEGQualityReducer": JPEGQualityReducer,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "Picta_JPEGQualityReducer": "JPEG Quality Reducer",
+    "ODD_JPEGQualityReducer": "JPEG Quality Reducer",
 }
