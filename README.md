@@ -4,6 +4,9 @@ A grab-bag of custom nodes for ComfyUI. No grand plan or curation — these are
 nodes I write as I hit specific needs while using ComfyUI myself. Quality and
 scope vary from node to node.
 
+All nodes are prefixed with `ODD_`, so search for `ODD_` in the ComfyUI node
+picker to find them all.
+
 ## Nodes
 
 | Node | Description |
